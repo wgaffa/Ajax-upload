@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Ajax Upload example</title>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.2/mootools-yui-compressed.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../ajax_upload.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+      window.addEvent('domready', function () {
+        new Upload('upload-form', {
+          onComplete: function (response) {
+            alert(response);
+          }
+        });
+      });
+    </script>
+    
+  </head>
+  
+  <body id="index">
+    <form action="upload.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" id="upload-form">
+      <fieldset id="upload" class="">
+        <legend>Upload</legend>
+        
+        <p><label for="input-file">File</label><input type="file" name="file" value="" id="input-file"></p>
+        
+        <p><input type="submit" value="Continue &rarr;"></p>
+      </fieldset>
+    </form>
+  </body>
+</html>
